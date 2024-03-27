@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\StudentPortal.web",
+    "\\StudentPortal.web\\Controllers",
+    "\\StudentPortal.web\\Views",
+    "\\StudentPortal.web\\Views\\Home",
+    "\\StudentPortal.web\\Views\\Shared"
+  ],
+  "SelectedNode": "\\StudentPortal.web\\Views\\Home\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}

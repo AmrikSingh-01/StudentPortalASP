@@ -1,0 +1,99 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@model List<StudentPortal.web.Models.Entities.Student>
+
+
+<div class="p-3">
+
+<div class="listhead">
+    <h1>Students</h1>
+    <div>
+        <input type="text" placeholder="Search" id="filterinput" class="form-control"/>
+        <a class="btn btn-primary" asp-area="" asp-controller="Students" asp-action="Add">Add</a>
+    </div>
+</div>
+
+<div class="slistcon mt-3">
+<table class="table">
+    <thead>
+        <tr>
+            <th>Student Name</th>
+            <th>Father Name</th>
+            <th>Mother Name</th>
+            <th>Age</th>
+            <th>Home Address</th>
+            <th>Registration Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var student in Model)
+        {
+            <tr>
+                <td>@student.Name</td>
+                <td>@student.FName</td>
+                <td>@student.MName</td>
+                <td>@student.Age</td>
+                <td>@student.Address</td>
+                <td>@student.RegDate</td>
+                <td>
+                    <div class="udbutcon">
+                        <a class="ubutcon" asp-controller="Students" asp-action="Edit" asp-route-id="@student.Id">
+                            
+                        </a>
+                        <div class="dbutcon">
+                            
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+    
+</table>
+</div>
+</div>
+
+<script>
+    document.querySelectorAll('.slistcon .dbutcon').forEach(function (delbut) {
+        delbut.addEventListener("click", function () {
+            let row = this.closest('tr');
+            if (row) {
+                row.remove();
+            }
+        })
+    });
+
+    //search
+    document.getElementById("filterinput").addEventListener("keyup", function () {
+        let val = this.value.trim();
+        let rows = document.querySelectorAll('.slistcon tbody tr');
+        if (rows.length) {
+            if (val == "") {
+                rows.forEach((row) => {
+                    row.classList.remove("hiderow");
+                });
+                
+            }
+            else { 
+                rows.forEach((row) => {
+                    const rowvals = row.querySelectorAll('td');
+                    const sname = rowvals[0].innerText;
+                    const add = rowvals[4].innerText;
+                    const regdt = rowvals[5].innerText;
+                    if ((sname.includes(val)) || (add.includes(val)) || (regdt.includes(val))) {
+                        row.classList.remove("hiderow");
+                    }
+                    else {
+                        row.classList.add("hiderow");
+                    }
+                });
+            }
+        }
+    })
+</script>

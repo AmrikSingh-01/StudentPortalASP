@@ -1,0 +1,94 @@
+html {
+  font-size: 14px;
+}
+
+* {
+    margin:0;
+    padding:0;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+
+#homecon{
+    display:grid;
+    place-items:center;
+    align-content:center;
+    background:#0a0927;
+    color:white;
+    height:100vh;
+}
+#homecon>p
+{
+    font-weight:bold;
+    font-size:2em;
+    margin-bottom:20px;
+}
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+
+.udbutcon
+{
+    width:100%;
+    display:flex;
+    justify-content:start;
+    gap:10%;
+    align-items:center;
+}
+.udbutcon>*
+{
+    height: 25px;
+    width:25px;
+    border-radius:50%;
+    background-color:white;
+    background-size:60%;
+    background-position:center;
+    background-repeat:no-repeat;
+    
+}
+    .udbutcon > *:hover
+    {
+        filter:brightness(90%);
+        cursor:pointer;
+    }
+    .ubutcon {
+        background-image: url("/imgres/edit.png");
+    }
+.dbutcon {
+    background-image: url("/imgres/delete.png");
+}
+.slistcon
+{
+    overflow:auto;
+}
+
+.listhead
+{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.listhead>div
+{
+    
+    display:flex;
+    justify-content:flex-end;
+    gap:5%;
+}
+
+.hiderow
+{
+    display:none;
+}
